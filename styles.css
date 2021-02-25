@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: seashell;
+    font-family: 'Manjari', sans-serif;
+    color: dimgray;
+}
+
+.title h1{
+    padding: 20px 0;
+    text-align:center;
+    font-size: 30px;
+}
+
+.container{
+    border: #f08080;
+    width: 90%;
+    max-width: 1000px;
+    margin: 10px auto;
+
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.container > .header,
+.container > .content,
+.container > .sidebar,
+.container > .footer,
+.container > div{
+    border: 2px solid #f08080;
+    border-radius: 10px;;
+    padding: 20px;
+}
+
+.container > .header,
+.container > .footer{
+    background-color: #f08080;
+    grid-column: 1/6;
+    border:none;
+    border-radius: 10px;
+}
+
+.container .content{
+    grid-column: 1/4;
+    border: 2px solid salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content > .article{
+    background-color: ivory;
+    padding: 20px;
+    border: 1px solid peachpuff;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.article > h1, p{
+    padding: 5px;
+}
+
+.container .sidebar{
+    grid-column: 4/6;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sidebar > div{
+    width: 100%;
+    background-color: ivory;
+    background-size: contain;
+    padding: 10px;
+    gap: 1em;
+    border: 1px solid peachpuff;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.sidebar > div > img{
+    width: 100%;
+}
+
+.sidebar > div:hover{
+    cursor: pointer;
+    border: 1px solid #f08080;
+}
+
+.related-post{   
+    display: flex; 
+    height: 80px;
+    justify-content: center;
+    align-items: center; 
+}
+
+.related-post:hover{
+    background-color: #f08080;
+    opacity: 0.5;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .container > .header{
+        text-align: center;
+    }
+    .container > .content{
+        grid-column: span 6;
+    }
+    .container > .sidebar{
+        grid-column: span 6;
+    }
+    .container > .related-post{
+        grid-column: span 6;
+    }
+}
+
+
+
+
+
